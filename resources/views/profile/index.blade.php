@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Dashboard')
+@section('title', 'Data Profile')
 
 @section('content')
 <!-- Begin Page Content -->
