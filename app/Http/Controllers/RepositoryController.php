@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RepositoryRequest;
 use App\Models\Repository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 
 use function App\Helpers\deleteFile;
@@ -21,7 +22,7 @@ class RepositoryController extends Controller
      */
     public function index()
     {
-        $data = Repository::paginate(10);
+        $data = Repository::where('user_id', Auth::user()->id)->with('user')->paginate(10);
         return view('repository.index', compact('data'));
     }
 
@@ -59,7 +60,7 @@ class RepositoryController extends Controller
      */
     public function show($id)
     {
-        $data = Repository::findOrFail($id);
+        $data = Repository::with('user')->findOrFail($id);
         return view('repository.show', compact('data'));
     }
 
