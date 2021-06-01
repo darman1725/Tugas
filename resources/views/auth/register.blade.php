@@ -14,7 +14,7 @@
                     <div class="p-5">
                         <div class="text-center">
                             <img src="{{asset('img/polinema.png')}}" alt="" class="img-responsive mb-3" width="150">
-                            <h1 class="h4 text-gray-900 mb-4 font-weight-bold">REGSITER</h1>
+                            <h1 class="h4 text-gray-900 mb-4 font-weight-bold">REGISTER</h1>
                             @if (session('error'))
                             <div class="alert alert-danger" role="alert">
                                 {{ session('error') }}
