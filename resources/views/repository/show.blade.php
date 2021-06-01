@@ -24,19 +24,19 @@
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-md-4 font-weight-bold">Nama Penerbit</div>
-                                <div class="col-md-8">{{ Auth::user()->name }}</div>
+                                <div class="col-md-8">{{ $data->user->name }}</div>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-md-4 font-weight-bold">Program Studi</div>
-                                <div class="col-md-8">{{ Auth::user()->prodi }}</div>
+                                <div class="col-md-8">{{ $data->user->prodi }}</div>
                             </div>
                         </li>
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-md-4 font-weight-bold">Jurusan</div>
-                                <div class="col-md-8">{{ Auth::user()->jurusan }}</div>
+                                <div class="col-md-8">{{ $data->user->jurusan }}</div>
                             </div>
                         </li>
                         <li class="list-group-item">
