@@ -1,31 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.main')
+
+@section('title', 'Dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-primary text-white shadow">
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-
-                    <table class="table table-responsive">
-                    <tr><th>Username</th><th>:</th><td>{{ $user->username }}</td></tr>
-                    <tr><th>Name</th><th>:</th><td>{{ $user->name }}</td></tr>
-                    <tr><th>Email</th><th>:</th><td>{{ $user->email }}</td></tr>
-                    <tr><th>Created At</th><th>:</th><td>{{ $user->created_at }}</td></tr>
-                    </table>
+                    <h3 class="font-weight-bold">Halo, {{Auth::user()->name}}.</h3>
+                    <h4>Selamat datang di Sistem Repository Kampus Politeknik Negeri Malang</h4>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
 
+</div>
+<!-- /.container-fluid -->
+@endsection
