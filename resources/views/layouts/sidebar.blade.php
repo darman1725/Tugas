@@ -34,6 +34,12 @@
                     <span>Data Profile</span></a>
             </li>
 
+            <li class="nav-item {{ Request::segment(1) === 'repository' ? 'active' : null }} ">
+                <a class=" nav-link" href="{{ route('repository.index')}}">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span>Data Repository</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
