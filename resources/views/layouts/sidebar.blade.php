@@ -3,10 +3,11 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    {{-- <i class="fas fa-laugh-wink"></i> --}}
+                    <img src="{{asset('img/polinema.png')}}" alt="" width="50">
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Repository</div>
             </a>
 
             <!-- Divider -->
@@ -28,7 +29,7 @@
             </div>
 
             <li class="nav-item {{ Request::segment(1) === 'profile' ? 'active' : null }} ">
-                <a class=" nav-link" href="{{ route('home')}}">
+                <a class=" nav-link" href="{{ route('profile.index')}}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Data Profile</span></a>
             </li>
