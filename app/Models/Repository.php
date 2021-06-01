@@ -12,10 +12,21 @@ class Repository extends Model
     protected $table = 'repository';
 
     protected $fillable = [
+        'user_id',
         'judul',
         'jenis',
         'abstrak',
         'komentar',
         'file',
     ];
+
+    /**
+     * Get the user that owns the Repository
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
