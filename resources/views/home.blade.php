@@ -12,8 +12,8 @@
         <div class="col-12">
             <div class="card bg-primary text-white shadow">
                 <div class="card-body">
-                    <h3 class="font-weight-bold">Halo, {{Auth::user()->name}}.</h3>
-                    <h4>Selamat datang di Sistem Repository Kampus Politeknik Negeri Malang</h4>
+                    <h3 class="font-weight-bold">Halo, {{Auth::user()->name}}. Selamat datang di Sistem Repository Politeknik Negeri Malang.</h3>
+                    <h4>Silahkan lengkapi data profil kamu sebelum menggunggah berkas.</h4>
                 </div>
             </div>
         </div>
