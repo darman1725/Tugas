@@ -30,13 +30,13 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user @error('username') is-invalid @enderror" id="username" name="username" placeholder="Enter username..." required autofocus>
                                         @error('username')
-                                        <span class="text-danger">{{ $message }}</span>
+                                        <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" placeholder="Enter password..." required>
                                         @error('password')
-                                        <span class="text-danger">{{ $message }}</span>
+                                        <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-user btn-block">
