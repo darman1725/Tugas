@@ -48,6 +48,7 @@ class RepositoryController extends Controller
         if ($request->hasFile('file')) {
             $payload['file'] = uploadFile($request->file('file'), $request->judul, 'dokumen');
         }
+        $payload['user_id'] = Auth::user()->id;
         Repository::create($payload);
         return redirect()->route('repository.index')->with('success', 'Data berhasil ditambahkan');
     }
