@@ -35,6 +35,7 @@ class RepositoryRequest extends FormRequest
                 'judul' => 'required',
                 'jenis' => 'required',
                 'abstrak' => 'required',
+                'file' => 'max:5120|mimes:pdf',
             ];
         }
     }
