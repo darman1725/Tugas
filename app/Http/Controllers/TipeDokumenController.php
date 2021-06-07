@@ -60,7 +60,8 @@ class TipeDokumenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = TipeDokumen::findOrFail($id);
+        return view('tipe.edit', compact('data'));
     }
 
     /**
