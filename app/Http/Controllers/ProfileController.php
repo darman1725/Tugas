@@ -6,6 +6,8 @@ use App\Http\Requests\ProfileRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use function App\Helpers\updateFile;
+
 class ProfileController extends Controller
 {
     /**
@@ -58,7 +60,7 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('profile.edit');
     }
 
     /**
@@ -70,8 +72,15 @@ class ProfileController extends Controller
      */
     public function update(ProfileRequest $request, $id)
     {
-        User::findOrFail($id)->update($request->all());
-        return redirect()->back()->with('success', 'Data profil berhasil di update');
+        $data = User::findOrFail($id);
+        $payload = $request->only(['username', 'name', 'nim', 'email', 'phone', 'prodi', 'jurusan']);
+        if ($request->hasFile('image')) {
+            $payload['image'] = updateFile($data->image, 'user', $request->file('image'), $request->username, 'user');
+        } else {
+            $payload['image'] = $data->image;
+        }
+        $data->update($payload);
+        return redirect()->route('profile.index')->with('success', 'Data profil berhasil di update');
     }
 
     /**
