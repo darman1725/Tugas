@@ -21,7 +21,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Data Profile</h6>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('profile.update', Auth::user()->id)}}" method="POST">
+                    <form action="{{route('profile.update', Auth::user()->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -67,9 +67,16 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="phone">Nomor HP</label>
+                            <label for="image">Nomor HP</label>
                             <input type="number" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Enter phone" value="{{Auth::user()->phone}}">
                             @error('phone')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Foto</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
+                            @error('image')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
