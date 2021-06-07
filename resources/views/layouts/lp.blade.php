@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{asset('img/polinema.png')}}" type="image/x-icon">
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -14,26 +16,28 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Repository App</a>
+            <a class="navbar-brand" href="{{route('lp.home')}}">
+                <img src="{{asset('img/polinema.png')}}" width="40" alt="">
+                Repository App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="{{route('lp.home')}}">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Repository</a>
+                        <a class="nav-link" href="{{route('lp.repo')}}">Repository</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="{{route('lp.faq')}}">FAQ</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link" href="{{route('lp.about')}}">About Us</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="{{route('lp.contact')}}">Contact Us</a>
                     </li>
                     @if (Route::has('login'))
                     @auth
