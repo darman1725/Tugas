@@ -20,6 +20,12 @@
                     <span>Dashboard</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class=" nav-link" href="{{ route('lp.home')}}">
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Halaman Utama</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
