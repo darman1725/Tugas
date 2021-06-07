@@ -67,7 +67,6 @@
                                     <td>{{$item->name}}</td>
                                     <td>
                                         <a href="{{ route('tipe.edit', $item->id)}}" class="btn btn-sm btn-success"><i class="fas fa-fw fa-edit"></i></a>
-                                        <a href="{{ route('tipe.show', $item->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-fw fa-eye"></i></a>
                                         <form action="{{route('tipe.destroy', $item->id)}}" method="POST" class="d-inline">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
