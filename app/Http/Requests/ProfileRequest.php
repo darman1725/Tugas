@@ -31,6 +31,7 @@ class ProfileRequest extends FormRequest
             'prodi' => 'required',
             'jurusan' => 'required',
             'phone' => 'required',
+            'image' => 'mimes:jpg,jpeg,png|max:3072',
         ];
     }
 
@@ -45,6 +46,9 @@ class ProfileRequest extends FormRequest
             'phone.required' => 'Nomor HP harus diisi',
             'prodi.required' => 'Program studi harus diisi',
             'jurusan.required' => 'Jurusan harus diisi',
+            'jurusan.required' => 'Jurusan harus diisi',
+            'image.mimes' => 'Gambar harus berupa JPG | PNG',
+            'image.max' => 'Ukuran gambar maksmial 3MB',
         ];
     }
 }
