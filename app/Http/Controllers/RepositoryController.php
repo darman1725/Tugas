@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RepositoryRequest;
 use App\Models\Repository;
+use App\Models\TipeDokumen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
@@ -33,7 +34,8 @@ class RepositoryController extends Controller
      */
     public function create()
     {
-        return view('repository.create');
+        $tipes = TipeDokumen::all();
+        return view('repository.create', compact('tipes'));
     }
 
     /**
