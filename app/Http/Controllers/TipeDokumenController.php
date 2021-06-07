@@ -73,7 +73,8 @@ class TipeDokumenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        TipeDokumen::findOrFail($id)->update($request->only(['name']));
+        return redirect()->route('tipe.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
