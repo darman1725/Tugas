@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TipeRequest;
 use App\Models\TipeDokumen;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,10 @@ class TipeDokumenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TipeRequest $request)
     {
-        //
+        TipeDokumen::create($request->only(['name']));
+        return redirect()->route('tipe.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
