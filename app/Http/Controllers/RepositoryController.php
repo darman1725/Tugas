@@ -63,7 +63,7 @@ class RepositoryController extends Controller
      */
     public function show($id)
     {
-        $data = Repository::with('user')->findOrFail($id);
+        $data = Repository::with('user', 'tipe')->findOrFail($id);
         return view('repository.show', compact('data'));
     }
 
@@ -76,7 +76,8 @@ class RepositoryController extends Controller
     public function edit($id)
     {
         $data = Repository::findOrFail($id);
-        return view('repository.edit', compact('data'));
+        $tipes = TipeDokumen::all();
+        return view('repository.edit', compact('data', 'tipes'));
     }
 
     /**
@@ -88,7 +89,7 @@ class RepositoryController extends Controller
      */
     public function update(RepositoryRequest $request, $id)
     {
-        $payload = $request->only(['judul', 'jenis', 'abstrak']);
+        $payload = $request->only(['judul', 'jenis', 'abstrak', 'tipe_id']);
         $data = Repository::findOrFail($id);
         if ($request->hasFile('file')) {
             $payload['file'] = updateFile($data->file, 'dokumen', $request->file('file'), $request->judul, 'dokumen');
