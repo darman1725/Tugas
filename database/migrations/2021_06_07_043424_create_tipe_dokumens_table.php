@@ -13,8 +13,9 @@ class CreateTipeDokumensTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipe_dokumens', function (Blueprint $table) {
+        Schema::create('tipe_dokumen', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100)->nullable();
             $table->timestamps();
         });
     }
