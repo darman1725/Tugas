@@ -34,6 +34,12 @@
                     <span>Data Profile</span></a>
             </li>
 
+            <li class="nav-item {{ Request::segment(1) === 'tipe' ? 'active' : null }} ">
+                <a class=" nav-link" href="{{ route('tipe.index')}}">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span>Data Jenis Dokumen</span></a>
+            </li>
+
             <li class="nav-item {{ Request::segment(1) === 'repository' ? 'active' : null }} ">
                 <a class=" nav-link" href="{{ route('repository.index')}}">
                     <i class="fas fa-fw fa-file"></i>
