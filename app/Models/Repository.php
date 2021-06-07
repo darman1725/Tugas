@@ -13,6 +13,7 @@ class Repository extends Model
 
     protected $fillable = [
         'user_id',
+        'tipe_id',
         'judul',
         'jenis',
         'abstrak',
@@ -28,5 +29,10 @@ class Repository extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function tipe()
+    {
+        return $this->belongsTo(TipeDokumen::class, 'tipe_id');
     }
 }
