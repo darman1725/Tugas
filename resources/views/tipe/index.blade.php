@@ -13,14 +13,34 @@
     </div>
 
     <div class="row">
+        @if (Session::has('success'))
         <div class="col-12">
-
-            @if (Session::has('success'))
             <div class="alert alert-success" role="alert">
                 {{Session::get('success')}}
             </div>
-            @endif
-
+        </div>
+        @endif
+        <div class="col-md-4">
+            <div class="card shadow my-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Tambah Tipe Dokumen</h6>
+                </div>
+                <div class="card-body">
+                    <form action="{{route('tipe.store')}}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Jenis Dokumen</label>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Masukkan jenis dokumen" value="{{ old('name')}}">
+                            @error('name')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
             <div class="card shadow my-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Data Tipe Dokumen</h6>
@@ -46,10 +66,9 @@
                                     <th scope="row">{{ ($data ->currentpage()-1) * $data ->perpage() + $loop->index + 1 }}</th>
                                     <td>{{$item->name}}</td>
                                     <td>
-                                        <a href="{{ route('repository.download', $item->id)}}" class="btn btn-sm btn-info" target="_blank"><i class="fas fa-fw fa-download"></i></a>
-                                        <a href="{{ route('repository.edit', $item->id)}}" class="btn btn-sm btn-success"><i class="fas fa-fw fa-edit"></i></a>
-                                        <a href="{{ route('repository.show', $item->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-fw fa-eye"></i></a>
-                                        <form action="{{route('repository.destroy', $item->id)}}" method="POST" class="d-inline">
+                                        <a href="{{ route('tipe.edit', $item->id)}}" class="btn btn-sm btn-success"><i class="fas fa-fw fa-edit"></i></a>
+                                        <a href="{{ route('tipe.show', $item->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-fw fa-eye"></i></a>
+                                        <form action="{{route('tipe.destroy', $item->id)}}" method="POST" class="d-inline">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-fw fa-trash"></i></button>
