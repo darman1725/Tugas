@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingPageController::class, 'index'])->name('lp.home');
+Route::get('/data-repository', [LandingPageController::class, 'repository'])->name('lp.repo');
+Route::get('/about-us', [LandingPageController::class, 'about'])->name('lp.about');
+Route::get('/contact-us', [LandingPageController::class, 'contact'])->name('lp.contact');
+Route::get('/faq', [LandingPageController::class, 'faq'])->name('lp.faq');
 
 Auth::routes();
 
