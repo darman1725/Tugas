@@ -22,7 +22,7 @@ class RepositoryController extends Controller
      */
     public function index()
     {
-        $data = Repository::where('user_id', Auth::user()->id)->with('user')->with('user')->paginate(10);
+        $data = Repository::where('user_id', Auth::user()->id)->with('user')->with('user', 'tipe')->paginate(10);
         return view('repository.index', compact('data'));
     }
 
