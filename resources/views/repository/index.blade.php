@@ -43,7 +43,7 @@
                             <tbody>
                                 @if ($data->isEmpty())
                                 <tr class="text-center">
-                                    <td colspan="6">Data masih kosong.</td>
+                                    <td colspan="7">Data masih kosong.</td>
                                 </tr>
                                 @else
                                 @foreach ($data as $item)
