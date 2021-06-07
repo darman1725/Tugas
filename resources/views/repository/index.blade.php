@@ -31,12 +31,13 @@
                         <table class="table table-hover table-bordered">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Judul Dokumen</th>
-                                    <th scope="col">Jenis Dokumen</th>
-                                    <th scope="col">Tanggal Terbit</th>
-                                    <th scope="col">Abstrak</th>
-                                    <th scope="col">Aksi</th>
+                                    <th scope="col" class="text-center">No</th>
+                                    <th scope="col" class="text-center">Judul Dokumen</th>
+                                    <th scope="col" class="text-center">Author</th>
+                                    <th scope="col" class="text-center">Jenis Dokumen</th>
+                                    <th scope="col" class="text-center">Tanggal Terbit</th>
+                                    <th scope="col" class="text-center">Abstrak</th>
+                                    <th scope="col" class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,6 +50,7 @@
                                 <tr>
                                     <th scope="row">{{ ($data ->currentpage()-1) * $data ->perpage() + $loop->index + 1 }}</th>
                                     <td>{{$item->judul}}</td>
+                                    <td>{{$item->user->name}}</td>
                                     <td>{{$item->jenis}}</td>
                                     <td>{{ $item->created_at->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td>{{ strlen($item->abstrak) > 40 ? substr($item->abstrak, 0, 40) . '...' : $item->abstrak }}</td>
