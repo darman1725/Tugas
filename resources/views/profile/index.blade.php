@@ -18,7 +18,10 @@
 
             <div class="card shadow my-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Data Profile</h6>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="m-0 font-weight-bold text-primary">Data Profile</h6>
+                        <a href="{{route('profile.edit', Auth::user()->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
