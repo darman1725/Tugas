@@ -23,8 +23,26 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="row">
-                                <div class="col-md-4 font-weight-bold">Nama Penerbit</div>
+                                <div class="col-md-4 font-weight-bold">Author</div>
                                 <div class="col-md-8">{{ $data->user->name }}</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-4 font-weight-bold">Judul Dokumen</div>
+                                <div class="col-md-8">{{$data->judul}}</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-4 font-weight-bold">Jenis Dokumen</div>
+                                <div class="col-md-8">{{$data->tipe->name}}</div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-4 font-weight-bold">Tanggal Terbit</div>
+                                <div class="col-md-8">{{ $data->created_at->isoFormat('dddd, D MMMM Y') }}</div>
                             </div>
                         </li>
                         <li class="list-group-item">
@@ -37,24 +55,6 @@
                             <div class="row">
                                 <div class="col-md-4 font-weight-bold">Jurusan</div>
                                 <div class="col-md-8">{{ $data->user->jurusan }}</div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-4 font-weight-bold">Judul Dokumen</div>
-                                <div class="col-md-8">{{$data->judul}}</div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-4 font-weight-bold">Jenis Dokumen</div>
-                                <div class="col-md-8">{{$data->jenis}}</div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-4 font-weight-bold">Tanggal Terbit</div>
-                                <div class="col-md-8">{{ $data->created_at->isoFormat('dddd, D MMMM Y') }}</div>
                             </div>
                         </li>
                         <li class="list-group-item">
