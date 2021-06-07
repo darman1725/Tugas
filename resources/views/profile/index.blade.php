@@ -24,7 +24,13 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class="row">
-                                <div class="col"></div>
+                                <div class="col">
+                                    @if (Auth::user()->image == null)
+                                    <img src="{{asset('img/avatar.png')}}" class="img-thumbnail rounded-circle" width="150" alt="">
+                                    @else
+                                    <img src="{{asset('user/' . Auth::user()->image)}}" class="img-thumbnail rounded-circle" width="150" alt="">
+                                    @endif
+                                </div>
                             </div>
                         </li>
                         <li class="list-group-item">
