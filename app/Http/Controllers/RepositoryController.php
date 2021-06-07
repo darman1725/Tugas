@@ -46,7 +46,7 @@ class RepositoryController extends Controller
      */
     public function store(RepositoryRequest $request)
     {
-        $payload = $request->only(['judul', 'jenis', 'abstrak']);
+        $payload = $request->only(['judul', 'jenis', 'abstrak', 'tipe_id']);
         if ($request->hasFile('file')) {
             $payload['file'] = uploadFile($request->file('file'), $request->judul, 'dokumen');
         }
