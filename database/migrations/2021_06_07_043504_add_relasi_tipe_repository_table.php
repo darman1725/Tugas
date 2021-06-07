@@ -15,7 +15,7 @@ class AddRelasiTipeRepositoryTable extends Migration
     {
         Schema::table('repository', function (Blueprint $table) {
             $table->dropColumn('jenis');
-            $table->unsignedBigInteger('tipe_id')->after('judul');
+            $table->unsignedBigInteger('tipe_id')->after('judul')->nullable();
             $table->foreign('tipe_id')->references('id')->on('tipe_dokumen')->onDelete('cascade');
         });
     }
