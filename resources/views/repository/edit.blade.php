@@ -38,9 +38,14 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="jenis">Jenis Dokumen</label>
-                            <input type="text" class="form-control @error('jenis') is-invalid @enderror" id="jenis" name="jenis" placeholder="Masukkan jenis dokumen" value="{{ $data->jenis }}">
-                            @error('jenis')
+                            <label for="tipe_id">Jenis Dokumen</label>
+                            <select name="tipe_id" id="tipe_id" class="form-control @error('tipe_id') is-invalid @enderror">
+                                <option selected disabled hidden>-- Pilih Jenis Dokumen --</option>
+                                @foreach ($tipes as $item)
+                                <option value="{{$item->id}}" {{$item->id == $data->tipe_id ? 'selected' : ''}}>{{$item->name}}</option>
+                                @endforeach
+                            </select>
+                            @error('tipe_id')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
