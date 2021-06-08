@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Repository;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -14,7 +15,7 @@ class LandingPageController extends Controller
     }
     public function repository()
     {
-        $repo = Repository::with('user', 'tipe')->paginate(2);
+        $repo = Repository::with('user', 'tipe')->paginate(10);
         return view('lp.repo', compact('repo'));
     }
     public function detailRepository($id)
@@ -29,7 +30,7 @@ class LandingPageController extends Controller
             $key = $request->keywords;
             $repo = Repository::whereYear('created_at', $key)
                 ->orWhere('judul', 'like', "%" . $key . "%")
-                ->with('user', 'tipe')->paginate(1);
+                ->with('user', 'tipe')->paginate(10);
             $repo->appends(['keywords' => $key]);
             return view('lp.search-repo', compact('repo'));
         }
@@ -46,7 +47,8 @@ class LandingPageController extends Controller
     }
     public function faq()
     {
-        return view('lp.faq');
+               $data = Faq::paginate(8);
+        return view('lp.faq', compact('data'));
     }
     public function policy()
     {
