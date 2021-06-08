@@ -60,7 +60,8 @@ class FAQController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Faq::findOrFail($id);
+        return view('faq.edit', compact('data'));
     }
 
     /**
@@ -72,8 +73,10 @@ class FAQController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Faq::findOrFail($id)->update($request->only(['title', 'content']));
+        return redirect()->route('faq.index')->with('success', 'Data berhasil diupdate');
     }
+
 
     /**
      * Remove the specified resource from storage.
