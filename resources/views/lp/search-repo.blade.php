@@ -9,6 +9,9 @@
         <div class="row">
             <div class="col-12 mb-4 text-center">
                 <h3>DATA REPOSITORY</h3>
+                @if (isset($key))
+                <h5>Keywords pencarian : {{$key}}</h5>
+                @endif
             </div>
             @if ($repo->isEmpty())
             <div class="col-12">
