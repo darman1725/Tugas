@@ -34,6 +34,9 @@
                         <a class="nav-link" href="{{route('lp.faq')}}">FAQ</a>
                     </li>
                     <li class="nav-item active">
+                        <a class="nav-link" href="{{route('lp.policy')}}">Policy</a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link" href="{{route('lp.about')}}">About Us</a>
                     </li>
                     <li class="nav-item active">
