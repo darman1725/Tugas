@@ -18,15 +18,11 @@
             </div>
             @else
             <div class="col-md-8 offset-md-2 mb-3">
-                <form action="" class="w-100">
-                    @csrf
+                <form action="{{route('repo.search')}}" class="w-100" method="GET">
                     <div class="row justify-content-between">
                         <div class="col-10">
                             <div class="form-group w-100">
-                                <input type="text" class="form-control w-100 @error('judul') is-invalid @enderror" id="judul" name="judul" placeholder="Masukkan judul dokumen" value="{{ old('judul')}}">
-                                @error('judul')
-                                <small class="text-danger">{{ $message }}</small>
-                                @enderror
+                                <input type="text" class="form-control w-100 " id="keywords" name="keywords" placeholder="Cari repository" value="{{ old('keywords')}}" required>
                             </div>
                         </div>
                         <div class="col-2 text-right">
@@ -37,7 +33,7 @@
             </div>
             @foreach ($repo as $item)
             <div class="col-md-6">
-                <a href="" style="text-decoration: none;">
+                <a href="{{route('lp.detailrepo', $item->id)}}" style="text-decoration: none;">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row no-gutters align-items-center">
                             <div class="col-md-4 p-3">
