@@ -20,6 +20,7 @@ class UserBaruSeeder extends Seeder
             'name' => 'Administrator',
             'email' => 'administrator@admin.com',
             'password' => Hash::make('admin1234'),
+            'role' => 'adm'
         ]);
     }
 }
