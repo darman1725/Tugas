@@ -27,7 +27,8 @@
             @else
             @foreach ($repo as $item)
             <div class="col-md-6">
-                <a href="" style="text-decoration: none;">
+                <a href="{{route('lp.detailrepo', $item->id)}}" style="text-decoration: none;">
+
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row no-gutters align-items-center">
                             <div class="col-md-4 p-3">
@@ -47,7 +48,7 @@
             </div>
             @endforeach
             <div class="col-12 my-3 text-center">
-                <a href="" class="btn btn-sm btn-outline-primary">Lihat semua repository</a>
+                <a href="{{route('lp.repo')}}" class="btn btn-sm btn-outline-primary">Lihat semua repository</a>
             </div>
             @endif
         </div>
