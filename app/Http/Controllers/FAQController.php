@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FaqRequest;
 use App\Models\Faq;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,10 @@ class FAQController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FaqRequest $request)
     {
-        //
+        Faq::create($request->only(['title', 'content']));
+        return redirect()->route('faq.index')->with('success', 'Data berhasil disimpan');
     }
 
     /**
