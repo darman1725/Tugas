@@ -14,6 +14,26 @@
     </div>
 
     <div class="row">
+        <div class="col-md-4 mb-3">
+            <form action="{{route('repository.index')}}" class="w-100" method="GET">
+                <div class="row justify-content-between">
+                    <div class="col-10">
+                        <div class="form-group w-100">
+                            <input type="text" class="form-control w-100 " id="keywords" name="keywords" placeholder="Cari repository" value="{{ old('keywords')}}" required>
+                        </div>
+                    </div>
+                    <div class="col-2 text-right">
+                        <button type="submit" class="btn btn-primary btn-block">Cari</button>
+                    </div>
+                </div>
+            </form>
+            @if (isset($key))
+            <h4>Keywords Pencarian : {{ $key}}</h4>
+            @endif
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-12">
 
             @if (Session::has('success'))
@@ -21,7 +41,6 @@
                 {{Session::get('success')}}
             </div>
             @endif
-
             <div class="card shadow my-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Data Repository</h6>
