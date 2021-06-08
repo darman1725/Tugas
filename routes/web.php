@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('lp.home');
 Route::get('/data-repository', [LandingPageController::class, 'repository'])->name('lp.repo');
-Route::get('/repository/search', [LandingPageController::class, 'search'])->name('repo.search');
+Route::get('/data-repository/search', [LandingPageController::class, 'search'])->name('repo.search');
 Route::get('/repo/{id}', [LandingPageController::class, 'detailRepository'])->name('lp.detailrepo');
 Route::get('/about-us', [LandingPageController::class, 'about'])->name('lp.about');
 Route::get('/contact-us', [LandingPageController::class, 'contact'])->name('lp.contact');
