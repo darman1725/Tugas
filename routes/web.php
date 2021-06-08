@@ -36,5 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('tipe', TipeDokumenController::class);
     Route::resource('profile', ProfileController::class);
     Route::resource('repository', RepositoryController::class);
-    Route::resource('faq', FAQController::class);
+    Route::middleware(['admin'])->group(function () {
+        Route::resource('faq', FAQController::class);
+    });
 });
