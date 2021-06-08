@@ -51,11 +51,13 @@
                     <i class="fas fa-fw fa-file"></i>
                     <span>Data Repository</span></a>
             </li>
+            @if (Auth::user()->role == "adm")
             <li class="nav-item {{ Request::segment(1) === 'faq' ? 'active' : null }} ">
                 <a class=" nav-link" href="{{ route('faq.index')}}">
                     <i class="fas fa-fw fa-file"></i>
                     <span>Data FAQ</span></a>
             </li>
+            @endif
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
