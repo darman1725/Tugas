@@ -25,6 +25,7 @@ class User extends Authenticatable
         'jurusan',
         'phone',
         'image',
+        'role',
         'password',
     ];
 
