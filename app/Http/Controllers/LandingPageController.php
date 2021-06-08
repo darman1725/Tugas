@@ -32,7 +32,7 @@ class LandingPageController extends Controller
                 ->orWhere('judul', 'like', "%" . $key . "%")
                 ->with('user', 'tipe')->paginate(10);
             $repo->appends(['keywords' => $key]);
-            return view('lp.search-repo', compact('repo'));
+            return view('lp.search-repo', compact('repo', 'key'));
         }
         return redirect()->route('lp.repo');
     }
@@ -47,7 +47,7 @@ class LandingPageController extends Controller
     }
     public function faq()
     {
-               $data = Faq::paginate(8);
+        $data = Faq::paginate(8);
         return view('lp.faq', compact('data'));
     }
     public function policy()
