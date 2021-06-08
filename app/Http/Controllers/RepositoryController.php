@@ -21,8 +21,16 @@ class RepositoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->keywords) {
+            $key = $request->keywords;
+            $data = Repository::whereYear('created_at', $key)
+                ->orWhere('judul', 'like', "%" . $key . "%")
+                ->with('user', 'tipe')->paginate(10);
+            $data->appends(['keywords' => $key]);
+            return view('repository.index', compact('data', 'key'));
+        }
         $data = Repository::where('user_id', Auth::user()->id)->with('user')->with('user', 'tipe')->paginate(10);
         return view('repository.index', compact('data'));
     }
