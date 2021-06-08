@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RepositoryController;
@@ -24,7 +25,7 @@ Route::get('/repository/search', [LandingPageController::class, 'search'])->name
 Route::get('/repo/{id}', [LandingPageController::class, 'detailRepository'])->name('lp.detailrepo');
 Route::get('/about-us', [LandingPageController::class, 'about'])->name('lp.about');
 Route::get('/contact-us', [LandingPageController::class, 'contact'])->name('lp.contact');
-Route::get('/faq', [LandingPageController::class, 'faq'])->name('lp.faq');
+Route::get('/faqs', [LandingPageController::class, 'faq'])->name('lp.faq');
 Route::get('/policy', [LandingPageController::class, 'policy'])->name('lp.policy');
 
 Auth::routes();
@@ -35,4 +36,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('tipe', TipeDokumenController::class);
     Route::resource('profile', ProfileController::class);
     Route::resource('repository', RepositoryController::class);
+    Route::resource('faq', FAQController::class);
 });
