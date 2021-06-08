@@ -83,6 +83,7 @@ class FAQController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Faq::findOrFail($id)->delete();
+        return redirect()->route('faq.index')->with('success', 'Data berhasil dihapus');
     }
 }
