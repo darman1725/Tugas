@@ -15,7 +15,7 @@ class FAQController extends Controller
     public function index()
     {
         $data = Faq::paginate(10);
-        return view('faq.index', compact('index'));
+        return view('faq.index', compact('data'));
     }
 
     /**
